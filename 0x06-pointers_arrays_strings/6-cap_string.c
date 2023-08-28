@@ -11,7 +11,8 @@
 bool is_separator(char c)
 {
     char separators[] = " \t\n,;.!?\"(){}";
-    for (int i = 0; separators[i]; i++)
+    int i;
+    for (i = 0; separators[i] != '\0'; i++)
     {
         if (c == separators[i])
         {
@@ -21,30 +22,23 @@ bool is_separator(char c)
     return false;
 }
 
-/**
- * cap_string - Capitalize all words of a string
- * @str: Input string
- *
- * Return: Pointer to the modified string
- */
 char *cap_string(char *str)
 {
-    bool new_word = true; // Flag to indicate the start of a new word
-
-    for (int i = 0; str[i]; i++)
+    bool new_word = true;
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
     {
         if (is_separator(str[i]))
         {
-            new_word = true; // Separator indicates a new word can start
+            new_word = true;
         }
         else if (new_word)
         {
-            // Capitalize the current character if it's a lowercase letter
             if (str[i] >= 'a' && str[i] <= 'z')
             {
                 str[i] = str[i] - ('a' - 'A');
             }
-            new_word = false; // Set the flag to false after capitalization
+            new_word = false;
         }
     }
 
