@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
-#include <string.h>
-#include "function_pointers.h"
 
 /**
  * main - start point
@@ -13,35 +11,27 @@
 
 int main(int argc, char *argv[])
 {
-int num1, num2, result;
-int (*operation)(int, int);
-char *operator;
-
 if (argc != 4)
 {
 printf("Error\n");
 return (98);
 }
 
-num1 = atoi(argv[1]);
-num2 = atoi(argv[3]);
-operator = argv[2];
+int num1 = atoi(argv[1]);
+int num2 = atoi(argv[3]);
+char *operator = argv[2];
 
-operation = get_op_func(operator);
+int (*operation)(int, int) = get_op_func(operator);
 
 if (operation == NULL)
 {
 printf("Error\n");
 return (99);
 }
-if ((strcmp(operator, "/") == 0 || strcmp(operator, "%") == 0) && num2 == 0)
-{
-printf("Error\n");
-return (100);
-}
 
-result = operation(num1, num2);
+int result = operation(num1, num2);
 printf("%d\n", result);
 
 return (0);
 }
+
