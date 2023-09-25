@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stddef.h>
-#include <stdio.h>
+#include <stdlib.h>
 /**
  * list_len - Returns the number of elements in a list_t list
  * @h: Pointer to the head of the list
