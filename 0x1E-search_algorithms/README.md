@@ -37,3 +37,17 @@ Resources
 Search algorithm: A structured approach to understanding various search algorithms.
 Space complexity (1): An introduction to the concept of space complexity in algorithms.
 Search Algorithms video playlist: A comprehensive video series on different search algorithms and their implementations
+
+
+
+
+ Big O notations used in algorithm analysis:
+
+O(1): Constant time complexity.
+O(n): Linear time complexity.
+O(n!): Factorial time complexity.
+n*m -> O(nm): Time complexity proportional to the product of n and m.
+n square -> O(n^2): Quadratic time complexity.
+sqrt n -> O(sqrt(n)): Time complexity proportional to the square root of n.
+log(n) -> O(log(n)): Logarithmic time complexity.
+n * log(n) -> O(nlog(n)): Linearithmic time complexity.
